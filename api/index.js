@@ -12,7 +12,11 @@ app.use(function (req, res, next) {
 
 app.use(express.static(__dirname + './../build'))
 
-app.get('*', function (req, res) {
+app.get('/', (req,res)=>{
+    res.sendFile(path.resolve(__dirname + './../build/index.html'));
+})
+
+app.get('*', (req, res)=>{
     res.sendFile(path.resolve((__dirname + './../build/index.html')))
 });
 
