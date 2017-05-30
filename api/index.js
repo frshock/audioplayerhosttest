@@ -10,7 +10,7 @@ app.use(function (req, res, next) {
     next()
 });
 
-app.use(express.static(__dirname + './../steam-api-front/build'))
+app.use(express.static(__dirname + './../build'))
 
 app.get('*', function (req, res) {
     res.sendFile(path.resolve((__dirname + './../build/index.html')))
